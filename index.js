@@ -20,14 +20,29 @@ var newGame = true;
 
 runGame = function () {
     if (newGame) {
+        console.log("---------------------------------------------------");
+        console.log("Welcome to Star Words V - The Console Strikes Back!");
+        console.log("---------------------------------------------------");
+
         // get the random word
         var theWord = getRandomWord()
         //use the random word to create a new instance
         var starWord = new Word(theWord)
         newGame = false;
     }
-}
+    // Prompt the user to start guessing
+    inquirer.prompt([
+        {
+            type: "input",
+            message: "Type a letter to guess the word: ",
+            name: "letter"
+        }
+    ])
+        .then(function (iResponse) {
+            console.log("User selected: " + iResponse.letter)
 
+        })
+}
 
 restartGame = function () {
     inquirer.prompt([
@@ -37,7 +52,7 @@ restartGame = function () {
             choices: ["Yes", "No"],
             name: "restart"
         }
-    ]).then(function(response) {
+    ]).then(function (response) {
         if (response.restart == "Yes") {
             newGame = true;
             incorrectLetters = [];
@@ -51,17 +66,4 @@ restartGame = function () {
 }
 
 
-
-
-// Prompt the user to start guessing
-inquirer.prompt([
-    {
-        type: "input",
-        message: "Type a letter to guess the word: ",
-        name: "letter"
-    }
-])
-    .then(function (iResponse) {
-        console.log("User selected: " + iResponse.letter)
-
-    })
+runGame();
