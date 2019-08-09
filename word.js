@@ -2,7 +2,7 @@ var Letter = require("./letter")
 
 function Word(aWord) {
     this.wordArray=[];
-    this.someString
+    this.someString = "";
 
     var output = aWord.split('')
 
@@ -16,18 +16,21 @@ function Word(aWord) {
 
     this.stringTheWord = function() {
         for (var i = 0; i < this.wordArray.length; i++) {
-            someString += this.wordArray[i] + "";
+            this.someString += this.wordArray[i] + "";
             
         }
-        console.log(someString + "\n")
+        console.log("somestring: " + this.someString + "\n")
     }
-
 }
 
-Word("Deathstar");
-//var xx = new Word("Deathstar")
+//Word("Deathstar");
+var xx = new Word("Deathstar")
 
-////var s = xx.stringTheWord
+console.log(xx.someString);
+xx.stringTheWord();
+
+
+//var s = xx.stringTheWord
 //console.log("this is a string of 'Deathstar': " + s)
 
 
