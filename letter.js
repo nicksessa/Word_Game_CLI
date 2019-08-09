@@ -1,7 +1,6 @@
 
 
-function Letter(guessedLetter, actualLetter) {
-    this.theGuess = guessedLetter;
+function Letter(actualLetter) {
     this.theLetter = actualLetter;
 
     var foundLetter = false;
@@ -14,7 +13,7 @@ function Letter(guessedLetter, actualLetter) {
         }
     }
     this.checkLetter = function (thePassedLetter) {
-        if (thePassedLetter == actualLetter) {
+        if (thePassedLetter == this.theLetter) {
             this.foundLetter = true;
         } else {
             this.foundLetter = false;
@@ -26,7 +25,8 @@ function Letter(guessedLetter, actualLetter) {
 var letterToGuess = "a";
 var theRealLetter = "b";
 
-var x = new Letter(letterToGuess, theRealLetter)
+// create a new instance of Letter passing it the letter we need to find
+var x = new Letter(theRealLetter)
 
 x.checkLetter(letterToGuess)
 
