@@ -22,6 +22,7 @@ function Letter(actualLetter) {
 
 }
 
+/*
 var letterToGuess = "a";
 var theRealLetter = "b";
 
@@ -39,6 +40,6 @@ if (x.foundLetter) {
     var s = x.toString()
     console.log(s)
 }
-
+*/
 
 module.exports = Letter;
