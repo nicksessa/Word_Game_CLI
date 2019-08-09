@@ -2,7 +2,6 @@ var Letter = require("./letter")
 
 function Word(aWord) {
     this.wordArray=[];
-    this.someString = "";
 
     var output = aWord.split('')
 
@@ -15,20 +14,31 @@ function Word(aWord) {
     console.log("-----------------------")
 
     this.stringTheWord = function() {
+        var s = "";
         for (var i = 0; i < this.wordArray.length; i++) {
-            this.someString += this.wordArray[i] + "";
+            s += this.wordArray[i] + " ";
             
         }
-        console.log("somestring: " + this.someString + "\n")
+        console.log("S is [" + s + "]\n")
+    }
+
+    this.userGuess = function(aLetter) {
+        for (var i = 0; i < this.wordArray.length; i++) {
+            this.wordArray[i].checkLetter(aLetter)
+        }
     }
 }
 
 //Word("Deathstar");
 var xx = new Word("Deathstar")
 
-console.log(xx.someString);
+console.log(xx.s + "\n");
 xx.stringTheWord();
 
+xx.userGuess("a");
+xx.stringTheWord();
+
+console.log("-->" + xx.s + "\n");
 
 //var s = xx.stringTheWord
 //console.log("this is a string of 'Deathstar': " + s)
