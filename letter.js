@@ -5,9 +5,9 @@ function Letter(actualLetter) {
 
     var foundLetter = false;
 
-    this.returnLetterOrUnderscore = function () {
+    this.toString = function () {
         if (this.foundLetter) {
-            return stringOf(this.theLetter);
+            return this.theLetter;
         } else {
             return "_";
         }
@@ -32,11 +32,11 @@ x.checkLetter(letterToGuess)
 
 if (x.foundLetter) {
     console.log(letterToGuess + " matches: " + theRealLetter)
-    var s = x.returnLetterOrUnderscore
+    var s = x.toString()
     console.log(s)
 } else {
     console.log(letterToGuess + " does not match: " + theRealLetter)
-    var s = x.returnLetterOrUnderscore
+    var s = x.toString()
     console.log(s)
 }
 
