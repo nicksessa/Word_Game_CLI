@@ -2,6 +2,7 @@ var word = require("./word");
 var inquirer = reqire("inquirer");
 var totalStrikes = 5;
 var foundLetters = [];
+var incorrectLetters = [];
 var validLetters = "abcdefghijklmnopqrstuvwxyz";
 
 var wordList = ["deathstar", "tatooine", "x wing", "yoda",
@@ -25,6 +26,28 @@ runGame = function () {
         var starWord = new Word(theWord)
         newGame = false;
     }
+}
+
+
+restartGame = function () {
+    inquirer.prompt([
+        {
+            type: "list",
+            message: "Would you like to play again? ",
+            choices: ["Yes", "No"],
+            name: "restart"
+        }
+    ]).then(function(response) {
+        if (response.restart == "Yes") {
+            newGame = true;
+            incorrectLetters = [];
+            foundLetters = [];
+            totalStrikes = 5;
+            runGame();
+        } else {
+            return;
+        }
+    })
 }
 
 
