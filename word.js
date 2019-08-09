@@ -30,7 +30,7 @@ function Word(aWord) {
 }
 
 //Word("Deathstar");
-var xx = new Word("Deathstar")
+var xx = new Word("Luke Skywalker")
 
 //console.log(xx.s + "\n");
 xx.stringTheWord();

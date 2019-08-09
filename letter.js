@@ -6,10 +6,15 @@ function Letter(actualLetter) {
     var foundLetter = false;
 
     this.toString = function () {
-        if (this.foundLetter) {
-            return this.theLetter;
+        if (this.theLetter == " ") {
+            this.foundLetter = true;
+            return " "
         } else {
-            return "_";
+            if (this.foundLetter) {
+                return this.theLetter;
+            } else {
+                return "_";
+            }
         }
     }
     this.checkLetter = function (thePassedLetter) {
