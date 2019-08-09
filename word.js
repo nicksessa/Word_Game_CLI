@@ -1,7 +1,7 @@
 var Letter = require("./letter")
 
 function Word(aWord) {
-    this.wordArray=[]
+    this.wordArray=[];
     this.someString
 
     var output = aWord.split('')
@@ -15,19 +15,20 @@ function Word(aWord) {
     console.log("-----------------------")
 
     this.stringTheWord = function() {
-        for (var i = 0; i < wordArray.length; i++) {
-            someString += wordArray[i].toString()
+        for (var i = 0; i < this.wordArray.length; i++) {
+            someString += this.wordArray[i] + "";
             
         }
+        console.log(someString + "\n")
     }
 
 }
 
-//Word("Deathstar");
-var xx = new Word("Deathstar")
+Word("Deathstar");
+//var xx = new Word("Deathstar")
 
-var s = xx.stringTheWord
-console.log("this is a string of 'Deathstar': " + s)
+////var s = xx.stringTheWord
+//console.log("this is a string of 'Deathstar': " + s)
 
 
 
