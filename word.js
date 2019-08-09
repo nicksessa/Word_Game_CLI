@@ -32,13 +32,13 @@ function Word(aWord) {
 //Word("Deathstar");
 var xx = new Word("Deathstar")
 
-console.log(xx.s + "\n");
+//console.log(xx.s + "\n");
 xx.stringTheWord();
 
 xx.userGuess("a");
 xx.stringTheWord();
 
-console.log("-->" + xx.s + "\n");
+//console.log("-->" + xx.s + "\n");
 
 //var s = xx.stringTheWord
 //console.log("this is a string of 'Deathstar': " + s)
@@ -46,3 +46,4 @@ console.log("-->" + xx.s + "\n");
 
 
 
+module.exports = Word;
