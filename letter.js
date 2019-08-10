@@ -3,7 +3,7 @@
 function Letter(actualLetter) {
     this.theLetter = actualLetter;
 
-    var foundLetter = false;
+    this.foundLetter = false;
 
     this.toString = function () {
         if (this.theLetter == " ") {

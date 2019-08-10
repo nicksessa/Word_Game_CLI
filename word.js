@@ -5,7 +5,7 @@ function Word(aWord) {
 
     var output = aWord.split('')
 
-    console.log("You passed: " + aWord)
+    //console.log("You passed: " + aWord)
     for (var i = 0; i < output.length; i++) {
         //console.log(output[i])
         var x = new Letter(output[i])
@@ -19,7 +19,7 @@ function Word(aWord) {
             s += this.wordArray[i] + " ";
             
         }
-        console.log("S is [" + s + "]\n")
+        console.log("[  " + s + " ]\n")
     }
 
     this.userGuess = function(aLetter) {
@@ -30,20 +30,18 @@ function Word(aWord) {
 }
 
 //Word("Deathstar");
-var xx = new Word("Luke Skywalker")
+//var xx = new Word("Luke Skywalker")
 
 //console.log(xx.s + "\n");
-xx.stringTheWord();
+//xx.stringTheWord();
 
-xx.userGuess("a");
-xx.stringTheWord();
+//xx.userGuess("a");
+//xx.stringTheWord();
 
 //console.log("-->" + xx.s + "\n");
 
 //var s = xx.stringTheWord
 //console.log("this is a string of 'Deathstar': " + s)
-
-
 
 
 module.exports = Word;
