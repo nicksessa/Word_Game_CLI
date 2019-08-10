@@ -1,30 +1,24 @@
-
-
 function Letter(actualLetter) {
     this.theLetter = actualLetter;
-
     this.foundLetter = false;
 
     this.toString = function () {
-        if (this.theLetter == " ") {
+        if (this.theLetter === " ") {
             this.foundLetter = true;
-            return " "
+            return " ";
         } else {
-            if (this.foundLetter) {
-                return this.theLetter;
-            } else {
+            if (this.foundLetter === false) {
                 return "_";
+            } else {
+                return this.theLetter;
             }
         }
-    }
+    };
     this.checkLetter = function (thePassedLetter) {
-        if (thePassedLetter == this.theLetter) {
+        if (thePassedLetter === this.theLetter) {
             this.foundLetter = true;
-        } else {
-            this.foundLetter = false;
-        }
+        } 
     }
-
 }
 
 /*

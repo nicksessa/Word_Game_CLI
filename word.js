@@ -1,20 +1,20 @@
-var Letter = require("./letter")
+var Letter = require("./letter.js")
 
 function Word(aWord) {
-    this.wordArray=[];
+    this.wordArray = [];
 
-    var output = aWord.split('')
+    //var output = aWord.split('')
 
     //console.log("You passed: " + aWord)
-    for (var i = 0; i < output.length; i++) {
+    for (var i = 0; i < aWord.length; i++) {
         //console.log(output[i])
-        var x = new Letter(output[i])
+        var x = new Letter(aWord[i])
         this.wordArray.push(x)
     }
-    console.log("-----------------------")
+    //console.log("-----------------------")
 
     this.stringTheWord = function() {
-        var s = "";
+        s = "";
         for (var i = 0; i < this.wordArray.length; i++) {
             s += this.wordArray[i] + " ";
             
